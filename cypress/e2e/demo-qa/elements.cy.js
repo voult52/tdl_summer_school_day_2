@@ -88,7 +88,7 @@ context("Elements Page", () => {
       RadioButton.visit();
     });
 
-    it.only("Scenario 1", () => {
+    it("Scenario 1", () => {
       RadioButtonPage.RadioButton_Yes.click()
       RadioButtonPage.Validate_Choice.should("have.text", "Yes")
       RadioButtonPage.RadioButton_Impressive.click()
@@ -115,18 +115,48 @@ context("Elements Page", () => {
       WebTablesPage.visit();
     });
 
-    
-    // Create WebTables page object
-    // Create scenario 1:
+    it("Scenario 1", () => {
+
+      // Create scenario 1:
     // Click add record button
     // fill in the necessary information
     // click submit button
     // search for the user based on previously added information
     // validate tha the user is visible
 
+      WebTablesPage.Button_AddButton.click()
+      WebTablesPage.Input_FirstName.type("Deniss")
+      WebTablesPage.Input_LastName.type("Belinskis")
+      WebTablesPage.Input_UserEmail.type("deniss.belinskis@inbox.lv")
+      WebTablesPage.Input_UserAge.type("22")
+      WebTablesPage.Input_UserSalary.type("500")
+      WebTablesPage.Input_UserDepartment.type("TestDevLab")
+      WebTablesPage.Button_Submit.click()
+
+      WebTablesPage.Input_SearchBox.type("deniss.belinskis@inbox.lv")
+      WebTablesPage.Validate_User.should("contain.text", "Deniss")
+      WebTablesPage.Validate_User.should("contain.text", "Belinskis")
+      WebTablesPage.Validate_User.should("contain.text", "deniss.belinskis@inbox.lv")
+      WebTablesPage.Validate_User.should("contain.text", "22")
+      WebTablesPage.Validate_User.should("contain.text", "500")
+      WebTablesPage.Validate_User.should("contain.text", "TestDevLab")
+      
+      
+
+
+  });
+    // Create WebTables page object
+    it("Scenario 2", () => {
+
     // Create Scenario 2:
     // Delete all table rows
     // Validate that we see text - No rows found
+    WebTablesPage.Delete_table
+    WebTablesPage.Validate_emtyCells.should('exist')
+    
+  });
+
+
   });
 
   context("Buttons scenarios", () => {
@@ -139,5 +169,12 @@ context("Elements Page", () => {
     // Validate the right click message
     // Do dynamic click
     // Validate dynamic click message
+
+    it.only("Scenario 1", () => {
+
+    
+     
+      
+    });
   });
 });
