@@ -1,4 +1,5 @@
-import SelectablePage from "../../iteration_pageObjects/selectablePage.js";// import page objects
+import SelectablePage from "../../pageObjects_iteration/selectablePage.js";// import page objects
+
 
 
 context("Interactions", () => {
@@ -49,3 +50,4 @@ context("Interactions", () => {
   
   });
 });
+

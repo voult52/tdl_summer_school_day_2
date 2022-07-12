@@ -6,7 +6,7 @@ class RadioButtonPage extends BasePage {
   }
 
   static get RadioButton_Yes() {
-    return cy.get('.col-md-6 > :nth-child(2) > :nth-child(2)')
+    return cy.get(':nth-child(2) > .custom-control-label')
   }
 
   static get Validate_Choice() {
