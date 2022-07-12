@@ -5,11 +5,23 @@ context("Elements Page", () => {
     beforeEach(() => {
       TextBoxPage.visit();
     });
-
+    
     // Create texbox scenario
     // fill in textboxes with necessary information
     // validate the paragraphs
     it("Filling in Text Boxes", () => {
+      TextBoxPage.Username_textbox.type("Josh Python")
+      TextBoxPage.User_email_textbox.type("Josh.Python@gmail.com")
+      TextBoxPage.User_currentAddr_textbox.type("Bakery street 32, Luton")
+      TextBoxPage.User_permanentAddr_textbox.type("Bakery street 32, Luton")
+      TextBoxPage.Submit_button.click()
+
+      TextBoxPage.Read_name.should("contain.text", "Josh Python")
+      TextBoxPage.Read_email.should("contain.text", "Josh.Python@gmail.com")
+      TextBoxPage.Read_currentAddress.should("contain.text", "Bakery street 32, Luton")
+      TextBoxPage.Read_permanentAdress.should("contain.text", "Bakery street 32, Luton")
+      
+
       // add the necessary steps
     });
   });
