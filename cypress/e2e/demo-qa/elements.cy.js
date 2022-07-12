@@ -1,5 +1,8 @@
 import CheckBoxPage from "../../pageObjects/checkBoxPage";
+import RadioButtonPage from "../../pageObjects/radioButton";
+import RadioButton from "../../pageObjects/radioButton";
 import TextBoxPage from "../../pageObjects/textBoxPage";
+import WebTablesPage from "../../pageObjects/webTables";
 
 context("Elements Page", () => {
   context("Text box scenarios", () => {
@@ -82,19 +85,37 @@ context("Elements Page", () => {
 
   context("Radio button scenarios", () => {
     beforeEach(() => {
-      CheckBoxPage.visit();
+      RadioButton.visit();
     });
+
+    it.only("Scenario 1", () => {
+      RadioButtonPage.RadioButton_Yes.click()
+      RadioButtonPage.Validate_Choice.should("have.text", "Yes")
+      RadioButtonPage.RadioButton_Impressive.click()
+      RadioButtonPage.Validate_Choice.should("have.text", "Impressive")
+      RadioButtonPage.RadioButton_No.should('have.class', 'disabled')
+      // Scenario 1:
+      // Click yesButton
+      // validate the message
+      // click impressiveButton
+      // validate the message
+      // noButton - validate that the button exists but is disabled
+      
+
+
+  });
+
     
-    // Create RadioButtons page object
-    // Scenario 1:
-    // Click yesButton
-    // validate the message
-    // click impressiveButton
-    // validate the message
-    // noButton - validate that the button exists but is disabled
+
+    
   });
 
   context("Web tables scenarios", () => {
+    beforeEach(() => {
+      WebTablesPage.visit();
+    });
+
+    
     // Create WebTables page object
     // Create scenario 1:
     // Click add record button
