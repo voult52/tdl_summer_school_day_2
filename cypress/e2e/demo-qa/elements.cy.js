@@ -1,3 +1,4 @@
+import CheckBoxPage from "../../pageObjects/checkBoxPage";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 
 context("Elements Page", () => {
@@ -27,6 +28,25 @@ context("Elements Page", () => {
   });
 
   context("Check box scenarios", () => {
+    beforeEach(() => {
+      CheckBoxPage.visit();
+    });
+
+    it("Filling in Text Boxes", () => {
+      CheckBoxPage.expansion_button.click()
+      CheckBoxPage. // Assert that el is visible
+      CheckBoxPage.checkBox_Note.click()
+      CheckBoxPage.checkBox_Angular.click()
+      CheckBoxPage.checkBox_React.click()
+      CheckBoxPage.checkBox_General.click()
+      CheckBoxPage.checkBox_ExelFile.click()
+  
+
+    });
+
+
+
+
     // Create CheckBoxPage page object
     // Create checkbox scenario 1:
     // Click the "+"/expand button
@@ -37,6 +57,9 @@ context("Elements Page", () => {
     // Click expand button
     // Click Office
     // Validate the checked checkboxes
+
+
+
   });
 
   context("Radio button scenarios", () => {
