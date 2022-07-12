@@ -5,8 +5,10 @@ import RadioButton from "../../pageObjects/radioButton";
 import TextBoxPage from "../../pageObjects/textBoxPage";
 import WebTablesPage from "../../pageObjects/webTables";
 
+
 context("Elements Page", () => {
-  context("Text box scenarios", () => {
+
+  context("Textbox scenarios", () => {
     beforeEach(() => {
       TextBoxPage.visit();
     });
@@ -26,12 +28,9 @@ context("Elements Page", () => {
       TextBoxPage.Read_currentAddress.should("contain.text", "Bakery street 32, Luton")
       TextBoxPage.Read_permanentAdress.should("contain.text", "Bakery street 32, Luton")
       
-
-      // add the necessary steps
     });
   });
   context("Check box scenarios", () => {
-// Create CheckBoxPage page object
 
     beforeEach(() => {
       CheckBoxPage.visit();
@@ -60,27 +59,21 @@ context("Elements Page", () => {
 
     });
 
+
     it("Scenario 2", () => {
 
-        // Create checkbox scenario 2:
-        // Click expand button
-        // Click Office
-        // Validate the checked checkboxes
-        CheckBoxPage.expansion_button.click()
-        CheckBoxPage.checkBox_Office.click()
-        CheckBoxPage.Validate_Result.contains("office")
-        CheckBoxPage.Validate_Result.contains("public")
-        CheckBoxPage.Validate_Result.contains("private")
-        CheckBoxPage.Validate_Result.contains("classified")
-        CheckBoxPage.Validate_Result.contains("general")
+      // Create checkbox scenario 2:
+      // Click expand button
+      // Click Office
+      // Validate the checked checkboxes
+      CheckBoxPage.expansion_button.click()
+      CheckBoxPage.checkBox_Office.click()
+      CheckBoxPage.Validate_Result.contains("office")
+      CheckBoxPage.Validate_Result.contains("public")
+      CheckBoxPage.Validate_Result.contains("private")
+      CheckBoxPage.Validate_Result.contains("classified")
+      CheckBoxPage.Validate_Result.contains("general")
     });
-
-
-    
-    
-
- 
-
 
   });
 
@@ -102,13 +95,7 @@ context("Elements Page", () => {
       // validate the message
       // noButton - validate that the button exists but is disabled
       
-
-
   });
-
-    
-
-    
   });
 
   context("Web tables scenarios", () => {
@@ -142,45 +129,38 @@ context("Elements Page", () => {
       WebTablesPage.Validate_User.should("contain.text", "500")
       WebTablesPage.Validate_User.should("contain.text", "TestDevLab")
       
-      
-
-
   });
-    // Create WebTables page object
     it("Scenario 2", () => {
-
-    // Create Scenario 2:
-    // Delete all table rows
-    // Validate that we see text - No rows found
-    WebTablesPage.Delete_table
-    WebTablesPage.Validate_emtyCells.should('exist')
+      // Create Scenario 2:
+      // Delete all table rows
+      // Validate that we see text - No rows found
+      WebTablesPage.Delete_table
+      WebTablesPage.Validate_emtyCells.should('exist')
     
   });
-
-
   });
 
   context("Buttons scenarios", () => {
     beforeEach(() => {
       ButtonPage.visit();
     });
-    it.only("Scenario 1", () => {
- // Create buttons clicking scenario
-    // Create Buttons page
-    // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
-    // Click Double click button
-    // Validate the double click message
-    // Click rightclick button
-    // Validate the right click message
-    // Do dynamic click
-    // Validate dynamic click message
-    ButtonPage.Button_DoubleClick.dblclick()
-    ButtonPage.Message_DoubleClick.should("have.text", "You have done a double click")
-    ButtonPage.Button_RightClick.rightclick()
-    ButtonPage.Message_RightClick.should("have.text", "You have done a right click")
-    ButtonPage.Button_Dynamic_click.click()
-    ButtonPage.Message_Dynamic_click.should("have.text","You have done a dynamic click")
-      
-    });
+      it("Scenario 1", () => {
+  // Create buttons clicking scenario
+      // Create Buttons page
+      // Check documentation https://docs.cypress.io/api/commands/and for how to perform different types of clicking
+      // Click Double click button
+      // Validate the double click message
+      // Click rightclick button
+      // Validate the right click message
+      // Do dynamic click
+      // Validate dynamic click message
+      ButtonPage.Button_DoubleClick.dblclick()
+      ButtonPage.Message_DoubleClick.should("have.text", "You have done a double click")
+      ButtonPage.Button_RightClick.rightclick()
+      ButtonPage.Message_RightClick.should("have.text", "You have done a right click")
+      ButtonPage.Button_Dynamic_click.click()
+      ButtonPage.Message_Dynamic_click.should("have.text","You have done a dynamic click")
+        
+      });
   });
 });

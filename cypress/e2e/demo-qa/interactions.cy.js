@@ -24,7 +24,7 @@ context("Interactions", () => {
 
     });
 
-    it.only("Scenario 2", () => {
+    it("Scenario 2", () => {
          // Create scenario 2:
     // Click on grid
     // Click on numbers 4, 8, 6, 2
