@@ -26,43 +26,65 @@ context("Elements Page", () => {
       // add the necessary steps
     });
   });
-
   context("Check box scenarios", () => {
+// Create CheckBoxPage page object
+
     beforeEach(() => {
       CheckBoxPage.visit();
     });
 
-    it("Filling in Text Boxes", () => {
+    it("Scenario 1", () => {
+
+      // Create checkbox scenario 1:
+      // Click the "+"/expand button
+      // Click Notes, React, Angular, General, Excel File.doc
+      // Validate the clicked checkboxes
+
+
       CheckBoxPage.expansion_button.click()
-      CheckBoxPage. // Assert that el is visible
       CheckBoxPage.checkBox_Note.click()
       CheckBoxPage.checkBox_Angular.click()
       CheckBoxPage.checkBox_React.click()
       CheckBoxPage.checkBox_General.click()
       CheckBoxPage.checkBox_ExelFile.click()
-  
+      CheckBoxPage.Validate_Result.contains("note")
+      CheckBoxPage.Validate_Result.contains("angular")
+      CheckBoxPage.Validate_Result.contains("react")
+      CheckBoxPage.Validate_Result.contains("general")
+      CheckBoxPage.Validate_Result.contains("excelFile")
+
 
     });
 
+    it("Scenario 2", () => {
+
+        // Create checkbox scenario 2:
+        // Click expand button
+        // Click Office
+        // Validate the checked checkboxes
+        CheckBoxPage.expansion_button.click()
+        CheckBoxPage.checkBox_Office.click()
+        CheckBoxPage.Validate_Result.contains("office")
+        CheckBoxPage.Validate_Result.contains("public")
+        CheckBoxPage.Validate_Result.contains("private")
+        CheckBoxPage.Validate_Result.contains("classified")
+        CheckBoxPage.Validate_Result.contains("general")
+    });
 
 
+    
+    
 
-    // Create CheckBoxPage page object
-    // Create checkbox scenario 1:
-    // Click the "+"/expand button
-    // Click Notes, React, Angular, General, Excel File.doc
-    // Validate the clicked checkboxes
-
-    // Create checkbox scenario 2:
-    // Click expand button
-    // Click Office
-    // Validate the checked checkboxes
-
+ 
 
 
   });
 
   context("Radio button scenarios", () => {
+    beforeEach(() => {
+      CheckBoxPage.visit();
+    });
+    
     // Create RadioButtons page object
     // Scenario 1:
     // Click yesButton
